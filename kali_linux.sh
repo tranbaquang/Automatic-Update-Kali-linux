@@ -34,74 +34,74 @@ full(){
             fi    
         fi       
     else
-        echo "\e[05mQuá trình cài đặt tự động chưa được thực hiện !!!\e[0m"
+        echo "[\e[91m STOP \e[0m]Quá trình cài đặt tự động chưa được thực hiện !!!\e[0m"
     fi
     exit
 }
 
 color(){
-    echo "\n>> Màu tên người dùng lúc chưa đổi"
-    cp ~/.bashrc /root/Desktop/mauTenNguoiDung_ChuaDoi.txt
+    echo "\n[\e[91m CHECK \e[0m] Màu tên người dùng lúc chưa đổi"
+    #cp ~/.bashrc /root/Desktop/mauTenNguoiDung_ChuaDoi.txt
     echo "\e[07m_______________________________________________________________________________\n"
-    cat /root/Desktop/mauTenNguoiDung_ChuaDoi.txt
+    #cat /root/Desktop/mauTenNguoiDung_ChuaDoi.txt
     echo "______________________________________________________________________________\e[0m\n"
-    echo ">> \e[21mĐổi màu tên người dùng !!!\e[0m <<\n"
-    #   cat color.txt > ~/.bashrc
-    echo "<< \e[92mĐổi màu xong !!!\e[0m >>\n"
+    echo "[\e[93m START \e[0m] \e[21mĐổi màu tên người dùng !!!\e[0m \n"
+    #   cat txt/color.txt > ~/.bashrc
+    echo "[\e[92m DONE! \e[0m] \e[21mĐổi màu xong !!!\e[0m \n"
 }
 
 sources_list(){
-    echo ">> \e[21mĐang tìm sources.list mới nhất\e[0m <<\n"
-    echo "<< \e[42m`w3m https://docs.kali.org/general-use/kali-linux-sources-list-repositories | grep "deb http" | head -1 `\e[0m\n"
-    #    `w3m https://docs.kali.org/general-use/kali-linux-sources-list-repositories | grep "deb http" | head -1 | cat > source.txt`
-    #     `cat source.txt >> /etc/apt/sources.list`
+    echo "[\e[93m START \e[0m] \e[21mĐang tìm sources.list mới nhất\e[0m <<\n"
+    echo "[\e[91m CHECK \e[0m] \e[42m`w3m https://docs.kali.org/general-use/kali-linux-sources-list-repositories | grep "deb http" | head -1 `\e[0m\n"
+    #    `w3m https://docs.kali.org/general-use/kali-linux-sources-list-repositories | grep "deb http" | head -1 | cat > txt/source.txt`
+    #     `cat txt/source.txt >> /etc/apt/sources.list`
     #     echo ">> Nạp xong sources.list\n"
     #     apt-get update
-    echo "<< \e[92mĐã cập nhật sources.list\e[0m >>\n"
+    echo "[\e[92m DONE! \e[0m] \e[92mĐã cập nhật sources.list\e[0m \n"
 }
 
 unikey(){
-    echo ">> \e[21mĐang cài đặt bộ gõ ibus\e[0m << \n"
+    echo "[\e[93m START \e[0m] \e[21mĐang cài đặt bộ gõ ibus\e[0m \n"
     # apt-get install ibus-unikey -y
-    echo "<< \e[92mĐã cài đặt xong bộ gõ ibus\e[0m >>\n"
+    echo "[\e[92m DONE! \e[0m] \e[92mĐã cài đặt xong bộ gõ ibus\e[0m \n"
 }
 
 themes(){
-    echo ">> \e[21mCài đặt giao diện MacOS\e[0m <<\n"
+    echo "[\e[93m START \e[0m] \e[21mCài đặt giao diện MacOS\e[0m \n"
     #     `cp -r .icons ~`
-    echo "<< \e[92mCài xong bộ icons MacOS & IOS\e[0m >>"
+    echo "[\e[92m DONE! \e[0m] \e[92mCài xong bộ icons MacOS & IOS\e[0m"
     #     `cp -r .themes ~`
-    echo "<< \e[92mCài xong bộ themes MacOS\e[0m >>\n"
+    echo "[\e[92m DONE! \e[0m] \e[92mCài xong bộ themes MacOS\e[0m\n"
 }
 
 lib32(){
-    echo ">> \e[21mCài đặt thư viện linux 32bit (lib32)\e[0m <<\n"
+    echo "[\e[93m START \e[0m] \e[21mCài đặt thư viện linux 32bit (lib32)\e[0m \n"
     # apt-get install ia32-libs
     # apt-get install lib32gcc1 libc6-i386 lib32z1 lib32stdc++6
     # apt-get install lib32asound2 lib32ncurses5 lib32gomp1 lib32z1-dev lib32bz2-dev
     # apt-get install g++-multilib
-    echo "<< \e[92mCài xong bộ thư viện Lib32\e[0m >>\n"
+    echo "[\e[92m DONE! \e[0m] \e[92mCài xong bộ thư viện Lib32\e[0m \n"
 }
 
 font(){
-    echo ">> \e[21mCài đặt Microsoft Fonts và 1985 font việt hóa\e[0m <<\n"
+    echo "[\e[92m START \e[0m] \e[21mCài đặt Microsoft Fonts và 1985 font việt hóa\e[0m \n"
     # apt-get install ttf-mscorefonts-installer
     # mkdir /usr/share/fonts/truetype/newfonts | cp fonts/*ttf fonts/*TTF fonts/*otf /usr/share/fonts/truetype/newfonts
     # fc-cache -f -v
-    echo ">> \e[21mCài đặt xong Microsoft Fonts và 1985 font việt hóa\e[0m <<\n"
+    echo "[\e[92m DONE! \e[0m] \e[21mCài đặt xong Microsoft Fonts và 1985 font việt hóa\e[0m \n"
 }
 
 update_vesion_new(){
-    echo "=> \e[21mPhiên bản hiện tại của máy: \e[92m`uname -v`\e[0m\e[0m\n"    
-    #     echo "<<  \e[21mChuẩn bị cập nhật phiên bản cài đặt . . .\n"
+    echo "[\e[91m CHECK \e[0m] \e[21mPhiên bản hiện tại của máy: \e[92m`uname -v`\e[0m\e[0m\n"    
+    echo "[\e[93m START \e[0m] \e[21mChuẩn bị cập nhật phiên bản cài đặt . . .\e[0m\n"
     #     apt update
-    #     echo ">> \e[106mCập nhật phiên bản xong\e[0m\n"
-    #     echo ">> \e[96mNâng cấp phiên bản mới nhất !!!\e[0m\n"
-    #     echo ">> \e[05mQuá trình có thể diễn ra rất lâu\e[0m\n"
+    echo "[\e[92m DONE! \e[0m] \e[106mCập nhật phiên bản xong\e[0m\n"
+    echo "[\e[93m START \e[0m] \e[96mNâng cấp phiên bản mới nhất !!!\e[0m\n"
+    echo "[\e[96m WARN! \e[0m] \e[05mQuá trình có thể diễn ra rất lâu\e[0m\n"
     #     apt -y full-upgrade
-    #     echo "<< \e[07mXongggggggggggggggggg !!!\e[0m\n"
-    #     echo "<< Đã được nâng cấp lên phiên bản mới nhất !!!\n"
-    echo "<< \e[21mPhiên bản hiện tại là : \e[92m`uname -v`\e[0m\e[0m <<\n"
+    echo "[\e[92m DONE! \e[0m] \e[07mXongggggggggggggggggg !!!\e[0m\n"
+    echo "[\e[92m DONE! \e[0m] Đã được nâng cấp lên phiên bản mới nhất !!!\n"
+    echo "[\e[92m DONE! \e[0m] \e[21mPhiên bản hiện tại là : \e[92m`uname -v`\e[0m\e[0m \n"
 }
 
 ############################################## END UPDATE KALI #################################################
@@ -110,44 +110,44 @@ update_vesion_new(){
 ################################################################################################################
 ################################ START: MỘT SỐ ỨNG DỤNG QUANG HAY SỬ DỤNG ######################################
 chrome(){
-    echo ">> \e[21mCài đặt google chrome\e[0m <<"
+    echo "[\e[93m START \e[0m] \e[21mCài đặt google chrome\e[0m "
     # xong
     # wget -P /root/Downloads/chrome https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb 
     # dpkg -i /root/Downloads/chrome/*deb
     # apt-get install -f -y
-    # head -n 49 chrome.txt | cat > /opt/google/chrome/google-chrome
-    # tail -n 3 chrome.txt | cat > /etc/apt/sources.list.d/google-chrome.list
-    echo "<< \e[92mHoàn thành cài đặt Google Chrome\e[0m >>\n"
+    # head -n 49 txt/chrome.txt | cat > /opt/google/chrome/google-chrome
+    # tail -n 3 txt/chrome.txt | cat > /etc/apt/sources.list.d/google-chrome.list
+    echo "[\e[92m DONE! \e[0m] \e[92mHoàn thành cài đặt Google Chrome\e[0m\n"
 
 }
 
 sublime(){
-    echo ">> \e[21mTự động cài đặt Sublime Text 3\e[0m <<\n"
-    echo ">> Cài đặt GPG key:"
+    echo "[\e[93m START \e[0m] \e[21mTự động cài đặt Sublime Text 3\e[0m \n"
+    echo "[\e[91m CHECK \e[0m] Cài đặt GPG key:"
     # wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-    echo ">> Đảm bảo apt được thiết lập để hoạt động với các nguồn https:"
+    echo "[\e[91m CHECK \e[0m] Đảm bảo apt được thiết lập để hoạt động với các nguồn https:"
     # apt-get install apt-transport-https
-    echo ">> Chọn bản ổn định để sử dụng:"
+    echo "[\e[91m CHECK \e[0m] Chọn bản ổn định để sử dụng:"
     echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-    echo ">> Cập nhật thay đổi: "
+    echo "[\e[93m WAIT! \e[0m] Cập nhật thay đổi: "
     # apt-get update
-    echo ">> \e[21mCài đặt Sublime Text 3\e[0m <<"
+    echo "[\e[93m START \e[0m] \e[21mCài đặt Sublime Text 3\e[0m"
     # apt-get install sublime-text
-    echo "<< \e[92mHoàn thành cài đặt Sublime Text 3\e[0m >>\n"
+    echo "[\e[92m DONE! \e[0m] \e[92mHoàn thành cài đặt Sublime Text 3\e[0m\n"
     ###
 }
 
 vscode(){
-    echo ">> \e[21mCài đặt Visual Code\e[0m <<\n"
+    echo "[\e[93m START \e[0m] \e[21mCài đặt Visual Code\e[0m \n"
     # xong
     # wget -P /root/Downloads/vscode https://az764295.vo.msecnd.net/stable/a622c65b2c713c890fcf4fbf07cf34049d5fe758/code_1.34.0-1557957934_amd64.deb 
     # dpkg -i /root/Downloads/vscode/*deb
     # apt-get install -f -y
-    echo "<< \e[92mHoàn thành cài đặt Visual Code\e[0m >>\n"
+    echo "[\e[92m DONE! \e[0m] \e[92mHoàn thành cài đặt Visual Code\e[0m \n"
 }
 
 vmware(){
-    echo ">> \e[21mCài đặt VMware-Workstation 15.10\e[0m <<\n"
+    echo "[\e[93m START \e[0m] \e[21mCài đặt VMware-Workstation 15.10\e[0m\n"
     # xong
     # wget -P /root/Downloads/vmware wget https://download3.vmware.com/software/wkst/file/VMware-Workstation-Full-15.1.0-13591040.x86_64.bundle
     # chmod +x /root/Downloads/vmware/*bundle
@@ -171,52 +171,52 @@ vmware(){
         FF788-A1X86-08E9Q-5YN79-XV0YD\n
         FC51U-43Z0L-H85TZ-NZQ5G-PZUW6\e[0m\n"
     # ./*bundle
-    echo "<< \e[92mHoàn thành cài đặt VMware-Workstation 15.10\e[0m >>\n"
+    echo "[\e[92m DONE! \e[0m] \e[92mHoàn thành cài đặt VMware-Workstation 15.10\e[0m \n"
 }
 
 pycharm(){
-    echo ">> \e[21mCài đặt Pycharm Professinal\e[0m <<\n"
+    echo "[\e[93m START \e[0m] \e[21mCài đặt Pycharm Professinal\e[0m \n"
     ###
     # wget -P /root/Downloads/pycharm https://download-cf.jetbrains.com/python/pycharm-professional-2019.1.2.tar.gz
     # tar -zxvf /root/Downloads/pycharm/*gz
     # w3m https://www.hocpython.com/python-in-the-world/pycharm-license/ | grep 0.0.0.0 | cat >> /etc/hosts
     echo " Key kích hoạt: \n\n\e[91mBTBV1R0CZR-eyJsaWNlbnNlSWQiOiJCVEJWMVIwQ1pSIiwibGljZW5zZWVOYW1lIjoiTXVzaGZpcXVyIFJhaG1hbiIsImFzc2lnbmVlTmFtZSI6IiIsImFzc2lnbmVlRW1haWwiOiIiLCJsaWNlbnNlUmVzdHJpY3Rpb24iOiJGb3IgZWR1Y2F0aW9uYWwgdXNlIG9ubHkiLCJjaGVja0NvbmN1cnJlbnRVc2UiOmZhbHNlLCJwcm9kdWN0cyI6W3siY29kZSI6IklJIiwicGFpZFVwVG8iOiIyMDE5LTExLTI4In0seyJjb2RlIjoiQUMiLCJwYWlkVXBUbyI6IjIwMTktMTEtMjgifSx7ImNvZGUiOiJEUE4iLCJwYWlkVXBUbyI6IjIwMTktMTEtMjgifSx7ImNvZGUiOiJQUyIsInBhaWRVcFRvIjoiMjAxOS0xMS0yOCJ9LHsiY29kZSI6IkdPIiwicGFpZFVwVG8iOiIyMDE5LTExLTI4In0seyJjb2RlIjoiRE0iLCJwYWlkVXBUbyI6IjIwMTktMTEtMjgifSx7ImNvZGUiOiJDTCIsInBhaWRVcFRvIjoiMjAxOS0xMS0yOCJ9LHsiY29kZSI6IlJTMCIsInBhaWRVcFRvIjoiMjAxOS0xMS0yOCJ9LHsiY29kZSI6IlJDIiwicGFpZFVwVG8iOiIyMDE5LTExLTI4In0seyJjb2RlIjoiUkQiLCJwYWlkVXBUbyI6IjIwMTktMTEtMjgifSx7ImNvZGUiOiJQQyIsInBhaWRVcFRvIjoiMjAxOS0xMS0yOCJ9LHsiY29kZSI6IlJNIiwicGFpZFVwVG8iOiIyMDE5LTExLTI4In0seyJjb2RlIjoiV1MiLCJwYWlkVXBUbyI6IjIwMTktMTEtMjgifSx7ImNvZGUiOiJEQiIsInBhaWRVcFRvIjoiMjAxOS0xMS0yOCJ9LHsiY29kZSI6IkRDIiwicGFpZFVwVG8iOiIyMDE5LTExLTI4In0seyJjb2RlIjoiUlNVIiwicGFpZFVwVG8iOiIyMDE5LTExLTI4In1dLCJoYXNoIjoiMTEwODc1NDYvMCIsImdyYWNlUGVyaW9kRGF5cyI6MCwiYXV0b1Byb2xvbmdhdGVkIjpmYWxzZSwiaXNBdXRvUHJvbG9uZ2F0ZWQiOmZhbHNlfQ==-wQ6zKQMYh4XcZ+Rq3FkZCo9kJe9iJYoD1+cxAhVr1oiKOA0ANleB1AiBwlpeIuq6IH9v+Xt3mfONBboolQtbCsSjSuOwphPVP77sK4dzR4Bp5h0IMTlYLTSfYx484VhhuYr74VQT/90iXfKb8E/mFqJZKQQIXOXjfPPeqPsrOToxuXVIbW/i6Sp6Y6bSBYKJp1xtxTxWb/tBn/5zKK5seWS6cb/pttMFXQIFKjma6HXGxNgAlpC5hz20rH3+z4/ltns3ve4rlFn0QtHkBBRqm1G6HKTQkIg/h1cw8aVq0GIGYG6Hol5SNK0wzMB5CTjTOZxCqPb0d5LI7/cXh/i4tw==-MIIElTCCAn2gAwIBAgIBCTANBgkqhkiG9w0BAQsFADAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBMB4XDTE4MTEwMTEyMjk0NloXDTIwMTEwMjEyMjk0NlowaDELMAkGA1UEBhMCQ1oxDjAMBgNVBAgMBU51c2xlMQ8wDQYDVQQHDAZQcmFndWUxGTAXBgNVBAoMEEpldEJyYWlucyBzLnIuby4xHTAbBgNVBAMMFHByb2QzeS1mcm9tLTIwMTgxMTAxMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxcQkq+zdxlR2mmRYBPzGbUNdMN6OaXiXzxIWtMEkrJMO/5oUfQJbLLuMSMK0QHFmaI37WShyxZcfRCidwXjot4zmNBKnlyHodDij/78TmVqFl8nOeD5+07B8VEaIu7c3E1N+e1doC6wht4I4+IEmtsPAdoaj5WCQVQbrI8KeT8M9VcBIWX7fD0fhexfg3ZRt0xqwMcXGNp3DdJHiO0rCdU+Itv7EmtnSVq9jBG1usMSFvMowR25mju2JcPFp1+I4ZI+FqgR8gyG8oiNDyNEoAbsR3lOpI7grUYSvkB/xVy/VoklPCK2h0f0GJxFjnye8NT1PAywoyl7RmiAVRE/EKwIDAQABo4GZMIGWMAkGA1UdEwQCMAAwHQYDVR0OBBYEFGEpG9oZGcfLMGNBkY7SgHiMGgTcMEgGA1UdIwRBMD+AFKOetkhnQhI2Qb1t4Lm0oFKLl/GzoRykGjAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBggkA0myxg7KDeeEwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgWgMA0GCSqGSIb3DQEBCwUAA4ICAQAF8uc+YJOHHwOFcPzmbjcxNDuGoOUIP+2h1R75Lecswb7ru2LWWSUMtXVKQzChLNPn/72W0k+oI056tgiwuG7M49LXp4zQVlQnFmWU1wwGvVhq5R63Rpjx1zjGUhcXgayu7+9zMUW596Lbomsg8qVve6euqsrFicYkIIuUu4zYPndJwfe0YkS5nY72SHnNdbPhEnN8wcB2Kz+OIG0lih3yz5EqFhld03bGp222ZQCIghCTVL6QBNadGsiN/lWLl4JdR3lJkZzlpFdiHijoVRdWeSWqM4y0t23c92HXKrgppoSV18XMxrWVdoSM3nuMHwxGhFyde05OdDtLpCv+jlWf5REAHHA201pAU6bJSZINyHDUTB+Beo28rRXSwSh3OUIvYwKNVeoBY+KwOJ7WnuTCUq1meE6GkKc4D/cXmgpOyW/1SmBz3XjVIi/zprZ0zf3qH5mkphtg6ksjKgKjmx1cXfZAAX6wcDBNaCL+Ortep1Dh8xDUbqbBVNBL4jbiL3i3xsfNiyJgaZ5sX7i8tmStEpLbPwvHcByuf59qJhV/bZOl8KqJBETCDJcY6O2aqhTUy+9x93ThKs1GKrRPePrWPluud7ttlgtRveit/pcBrnQcXOl1rHq7ByB8CFAxNotRUYL9IF5n3wJOgkPojMy6jetQA5Ogc8Sm7RG6vg1yow==\e[0m\n"
     # ./pycharm-2019.1.2/bin/pycharm.sh
-    echo ">> \e[92mHoàn thành cài đặt Pycharm Professinal\e[0m <<\n"
+    echo "[\e[92m DONE! \e[0m] \e[92mHoàn thành cài đặt Pycharm Professinal\e[0m \n"
 }
 
 teamview(){
-    echo ">> \e[21mCài đặt Teamview\e[0m <<\n"
+    echo "[\e[93m START \e[0m] \e[21mCài đặt Teamview\e[0m \n"
     ### xong    
     # wget -P /root/Downloads/teamview https://dl.teamviewer.com/download/linux/version_14x/teamviewer_14.2.8352_amd64.deb 
     # dpkg -i /root/Downloads/teamview/*deb
-    echo ">> \e[92mHoàn thành cài đặt Teamview\e[0m <<\n"
+    echo "[\e[92m DONE! \e[0m] \e[92mHoàn thành cài đặt Teamview\e[0m \n"
 }
 
 wine(){
-    echo ">> \e[21mCài đặt Wine\e[0m <<\n"
-    echo "<< Cài bộ thư viên 32 bit"
+    echo "[\e[93m START \e[0m] \e[21mCài đặt Wine\e[0m \n"
+    echo "[\e[93m START \e[0m] Cài bộ thư viên 32 bit"
     # dpkg --add-architecture i386
-    echo "<<\n Thêm sources.list"
+    echo "[\e[96m CREAT \e[0m]\n Thêm sources.list"
     # add-apt-repository ppa:ubuntu-wine/ppa
-    echo "\n<< Update sources.list"
+    echo "\n[\e[91m CHECK \e[0m] Update sources.list"
     # apt-get update
-    echo "\n<< Cài đặt Wine"
+    echo "\n[\e[93m START \e[0m] Cài đặt Wine"
     # apt-get install wine
-    echo "<< Cài đặt winetricks"
+    echo "[\e[93m START \e[0m] Cài đặt winetricks"
     # apt-get install winetricks
-    echo ">> \e[92mHoàn thành cài đặt Wine\e[0m <<\n"
+    echo "[\e[92m DONE! \e[0m] \e[92mHoàn thành cài đặt Wine\e[0m \n"
 }
 
 tor(){
-    echo ">> \e[21mCài đặt Trình duyệt mô hình củ hành\e[0m <<\n"
+    echo "[\e[93m START \e[0m] \e[21mCài đặt Trình duyệt mô hình củ hành\e[0m \n"
     # apt-get install tor
     # wget -P /root/Downloads/tor-browser https://dist.torproject.org/torbrowser/8.5.3/tor-browser-linux64-8.5.3_en-US.tar.xz
     # tar xJf /root/Downloads/tor-browser/*tar.xz
-    # cat tor.txt > /root/Downloads/tor-browser/tor-browser_en-US/Browser/start-tor-browser
-    echo "<< \n Khởi chạy Tor-Browser"
+    # cat txt/tor.txt > /root/Downloads/tor-browser/tor-browser_en-US/Browser/start-tor-browser
+    echo "[\e[93m START \e[0m] \n Khởi chạy Tor-Browser"
     # cd ; cd Downloads/tor-browser_en-US; ./start-tor-browser.desktop
-    echo ">> \e[92mHoàn thành cài đặt củ hành trình duyệt\e[0m <<\n"
+    echo "[\e[92m DONE! \e[0m] \e[92mHoàn thành cài đặt củ hành trình duyệt\e[0m \n"
 }
 
 ################################# END: MỘT SỐ ỨNG DỤNG QUANG HAY SỬ DỤNG #######################################
@@ -412,11 +412,11 @@ continue_proc_main(){
 main(){
     if [ "$(id -u)" != "0" ]
     then 
-        echo ">> Hãy chạy quyền root để sử dụng script này !!! "
-        echo ">> Nhập mật khẩu của root"
+        echo "[\e[91m WARN! \e[0m] Hãy chạy quyền root để sử dụng script này !!! "
+        echo "[\e[93m START \e[0m]  Nhập mật khẩu của root"
         su -
+        su root
         main
-
         exit
     else
         clear

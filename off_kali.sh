@@ -13,7 +13,7 @@ full(){
         themes
         lib32
         font
-        dpkg --add-architecture i386
+        # dpkg --add-architecture i386
         update_vesion_new
         echo ">> Khởi động lại thiết bị của bạn để cảm nhận sự thay đổi (Y/N)? <<"
         read anw2
@@ -51,10 +51,8 @@ color(){
 }
 
 sources_list(){
-    echo ">> \e[21mĐang tìm sources.list mới nhất\e[0m <<\n"
-    echo "<< \e[42m`w3m https://docs.kali.org/general-use/kali-linux-sources-list-repositories | grep "deb http" | head -1 `\e[0m\n"
-    #    `w3m https://docs.kali.org/general-use/kali-linux-sources-list-repositories | grep "deb http" | head -1 | cat > source.txt`
-    #     `cat source.txt >> /etc/apt/sources.list`
+    echo ">> \e[21mĐang nạp sources.list\e[0m <<\n"
+    #     `cat txt/source.txt >> /etc/apt/sources.list`
     #     echo ">> Nạp xong sources.list\n"
     #     apt-get update
     echo "<< \e[92mĐã cập nhật sources.list\e[0m >>\n"
@@ -118,7 +116,6 @@ chrome(){
     # head -n 49 chrome.txt | cat > /opt/google/chrome/google-chrome
     # tail -n 3 chrome.txt | cat > /etc/apt/sources.list.d/google-chrome.list
     echo "<< \e[92mHoàn thành cài đặt Google Chrome\e[0m >>\n"
-
 }
 
 sublime(){
